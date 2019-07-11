@@ -4,7 +4,7 @@ import ContactCard from '../Components/ContactCard'
 const ContactContainer = (props) => {
 
   const renderCards = () => {
-    return props.allContacts.map((contactObj, index) => <ContactCard key={index} contact={contactObj} handleDeleteContact={props.handleDeleteContact} />)
+    return props.allContacts.map((contactObj, index) => <ContactCard key={index} contact={contactObj} handleUpdateContact={props.handleUpdateContact} handleDeleteContact={props.handleDeleteContact} />)
   }
 
   console.log(props);

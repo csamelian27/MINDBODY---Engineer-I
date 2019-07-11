@@ -15,6 +15,11 @@ class Home extends React.Component {
     })
   }
 
+  handleUpdateContact = (contact) => {
+    console.log("updating");
+    console.log(contact);
+  }
+
   handleDeleteContact = (contact) => {
     let { allContacts } = this.state;
     let newContacts = allContacts.filter(contactObj => contactObj.email !== contact.email)
@@ -30,7 +35,7 @@ class Home extends React.Component {
     return(
       <div className="home">
         <ContactForm handleAddContact={this.handleAddContact} />
-        <ContactContainer allContacts={allContacts} handleDeleteContact={this.handleDeleteContact} />
+        <ContactContainer allContacts={allContacts} handleUpdateContact={this.handleUpdateContact} handleDeleteContact={this.handleDeleteContact} />
       </div>
     )
   }
