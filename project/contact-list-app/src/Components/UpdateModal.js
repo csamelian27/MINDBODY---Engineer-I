@@ -22,7 +22,6 @@ class UpdateModal extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return(
       <div className="update-modal">
         <form className="update-form" onSubmit={this.handleSubmit}>
