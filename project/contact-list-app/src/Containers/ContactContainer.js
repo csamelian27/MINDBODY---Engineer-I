@@ -1,6 +1,7 @@
 import React from 'react';
 
-const ContactContainer = () => {
+const ContactContainer = (props) => {
+  console.log(props);
   return (
     <div>
       Contacts Container

@@ -9,11 +9,15 @@ class ContactForm extends React.Component {
   }
 
   handleChange = (e) => {
-
+    this.setState({
+      [e.target.name]: e.target.value
+    })
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
+    console.log("submitting!");
+    this.props.handleAddContact()
   }
 
   render() {
