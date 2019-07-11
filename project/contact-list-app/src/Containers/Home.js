@@ -16,8 +16,18 @@ class Home extends React.Component {
   }
 
   handleUpdateContact = (contact) => {
-    console.log("updating");
-    console.log(contact);
+    let { allContacts } = this.state;
+    let newArray = allContacts.map(contactObj => {
+      if(contactObj.index === contact.index) {
+        return contactObj = contact
+      } else {
+        return contactObj
+      }
+    })
+
+    this.setState({
+      allContacts: newArray
+    })
   }
 
   handleDeleteContact = (contact) => {
@@ -34,7 +44,7 @@ class Home extends React.Component {
 
     return(
       <div className="home">
-        <ContactForm handleAddContact={this.handleAddContact} />
+        <ContactForm allContacts={allContacts} handleAddContact={this.handleAddContact} />
         <ContactContainer allContacts={allContacts} handleUpdateContact={this.handleUpdateContact} handleDeleteContact={this.handleDeleteContact} />
       </div>
     )

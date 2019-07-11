@@ -5,7 +5,8 @@ class ContactForm extends React.Component {
   state = {
     name: "",
     phone: "",
-    email: ""
+    email: "",
+    index: 0
   }
 
   handleChange = (e) => {
@@ -20,12 +21,14 @@ class ContactForm extends React.Component {
     this.setState({
       name: "",
       phone: "",
-      email: ""
+      email: "",
+      index: this.props.allContacts.length + 1
     })
   }
 
   render() {
     console.log(this.state);
+    console.log(this.props.allContacts.length);
     return (
       <form className="contact-form" onSubmit={this.handleSubmit}>
         <input type="text" name="name" value={this.state.name} onChange={this.handleChange}></input>

@@ -5,7 +5,8 @@ class UpdateModal extends React.Component {
   state = {
     name: this.props.contact.name,
     phone: this.props.contact.phone,
-    email: this.props.contact.email
+    email: this.props.contact.email,
+    index: this.props.contact.index
   }
 
   handleChange = (e) => {
@@ -16,10 +17,12 @@ class UpdateModal extends React.Component {
 
   handleUpdateSubmit = (e) => {
     e.preventDefault();
-    this.props.handleClickUpdate(this.state);
+    this.props.handleClickUpdate();
+    this.props.handleUpdateContact(this.state);
   }
 
   render() {
+    console.log(this.props);
     return(
       <div className="update-modal">
         <form className="update-form" onSubmit={this.handleUpdateSubmit}>

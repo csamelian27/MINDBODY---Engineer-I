@@ -5,9 +5,8 @@ const ContactCard = (props) => {
 
   let [clicked, setClick] = useState(false);
 
-  const handleClickUpdate = (contact) => {
+  const handleClickUpdate = () => {
     setClick(clicked = !clicked);
-    props.handleUpdateContact(contact);
   }
 
   console.log(props);
@@ -20,7 +19,7 @@ const ContactCard = (props) => {
       {props.contact.email}
       <button onClick={handleClickUpdate}>Edit</button>
       <button onClick={() => props.handleDeleteContact(props.contact)}>Delete</button>
-      { clicked ? <UpdateModal contact={props.contact} handleClickUpdate={handleClickUpdate} /> : null }
+      { clicked ? <UpdateModal contact={props.contact} handleClickUpdate={handleClickUpdate} handleUpdateContact={props.handleUpdateContact} /> : null }
     </div>
   )
 }
