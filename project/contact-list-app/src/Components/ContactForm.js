@@ -16,8 +16,12 @@ class ContactForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitting!");
-    this.props.handleAddContact()
+    this.props.handleAddContact(this.state)
+    this.setState({
+      name: "",
+      phone: "",
+      email: ""
+    })
   }
 
   render() {

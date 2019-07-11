@@ -8,8 +8,11 @@ class Home extends React.Component {
     allContacts: []
   }
 
-  handleAddContact = () => {
-    console.log("handling adding contact");
+  handleAddContact = (contact) => {
+    let { allContacts } = this.state;
+    this.setState({
+      allContacts: [...allContacts, contact]
+    })
   }
 
   render() {
