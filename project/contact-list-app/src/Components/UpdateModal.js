@@ -15,7 +15,7 @@ class UpdateModal extends React.Component {
     })
   }
 
-  handleUpdateSubmit = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.handleClickUpdate();
     this.props.handleUpdateContact(this.state);
@@ -25,7 +25,7 @@ class UpdateModal extends React.Component {
     console.log(this.props);
     return(
       <div className="update-modal">
-        <form className="update-form" onSubmit={this.handleUpdateSubmit}>
+        <form className="update-form" onSubmit={this.handleSubmit}>
           <input type="text" name="name" value={this.state.name} onChange={this.handleChange}></input>
           <input type="text" name="phone" value={this.state.phone} onChange={this.handleChange}></input>
           <input type="text" name="email" value={this.state.email} onChange={this.handleChange}></input>

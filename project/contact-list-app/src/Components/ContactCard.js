@@ -9,8 +9,6 @@ const ContactCard = (props) => {
     setClick(clicked = !clicked);
   }
 
-  console.log(props);
-
   return(
     <div className="contact-card">
       I'm a Contact Card!
