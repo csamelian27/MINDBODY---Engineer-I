@@ -11,10 +11,9 @@ const ContactCard = (props) => {
 
   return(
     <div className="contact-card">
-      I'm a Contact Card!
-      {props.contact.name}
-      {props.contact.phone}
-      {props.contact.email}
+      <span>{props.contact.name}</span>
+      <span>{props.contact.phone}</span>
+      <span>{props.contact.email}</span>
       <button onClick={handleClickUpdate}>Edit</button>
       <button onClick={() => props.handleDeleteContact(props.contact)}>Delete</button>
       { clicked ? <UpdateModal contact={props.contact} handleClickUpdate={handleClickUpdate} handleUpdateContact={props.handleUpdateContact} /> : null }
