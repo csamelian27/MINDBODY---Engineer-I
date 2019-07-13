@@ -33,7 +33,7 @@ class Home extends React.Component {
 
   handleDeleteContact = (contact) => {
     let { allContacts } = this.state;
-    let newContacts = allContacts.filter(contactObj => contactObj.email !== contact.email)
+    let newContacts = allContacts.filter(contactObj => contactObj.index !== contact.index)
     this.setState({
       allContacts: newContacts
     })
