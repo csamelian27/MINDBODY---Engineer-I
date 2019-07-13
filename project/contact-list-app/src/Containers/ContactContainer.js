@@ -10,7 +10,7 @@ const ContactContainer = (props) => {
   console.log(props);
   return (
     <div className="contact-container">
-       {/*<h1> Your homies </h1> */}
+      Contacts Container
       {renderCards()}
     </div>
   )

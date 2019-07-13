@@ -5,8 +5,7 @@ import ContactContainer from './ContactContainer'
 class Home extends React.Component {
 
   state = {
-    allContacts: [],
-    renderContactForm: true
+    allContacts: []
   }
 
   handleAddContact = (contact) => {
@@ -39,21 +38,13 @@ class Home extends React.Component {
     })
   }
 
-  renderContactForm = () => {
-    this.setState( {
-      renderContactForm: !this.state.renderContactForm
-    })
-  }
-
   render() {
     let { allContacts } = this.state;
     console.log(allContacts);
 
     return(
       <div className="home">
-        {this.state.renderContactForm ? null : <button className="add-contact-button" onClick={this.renderContactForm}> Add Contact </button>}
-        {this.state.renderContactForm ? <ContactForm allContacts={allContacts} handleAddContact={this.handleAddContact} renderContactForm={this.renderContactForm}/> : null}
-
+        <ContactForm allContacts={allContacts} handleAddContact={this.handleAddContact} />
         <ContactContainer allContacts={allContacts} handleUpdateContact={this.handleUpdateContact} handleDeleteContact={this.handleDeleteContact} />
       </div>
     )
