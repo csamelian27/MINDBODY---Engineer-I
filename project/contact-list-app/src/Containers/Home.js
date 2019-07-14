@@ -5,11 +5,18 @@ import ContactContainer from './ContactContainer'
 class Home extends React.Component {
 
   state = {
-    allContacts: []
+    allContacts: [],
+    clickedRender: true
   }
 
   handleAddContact = (contact) => {
     let { allContacts } = this.state;
+    if(contact.phone === "") {
+      contact.phone = "~ No Phone # ~"
+    }
+    if(contact.email === "") {
+      contact.email = "~ No Email ~"
+    }
     this.setState({
       allContacts: [...allContacts, contact]
     })
@@ -38,13 +45,22 @@ class Home extends React.Component {
     })
   }
 
+  renderContactForm = () => {
+    let { clickedRender } = this.state
+    this.setState( {
+      clickedRender: !clickedRender
+    })
+  }
+
   render() {
-    let { allContacts } = this.state;
-    console.log(allContacts);
+    let { allContacts, clickedRender } = this.state;
+    console.log(allContacts, clickedRender);
 
     return(
       <div className="home">
-        <ContactForm allContacts={allContacts} handleAddContact={this.handleAddContact} />
+        {clickedRender ? null : <button className="add-contact-button" onClick={this.renderContactForm}> Add Contact </button>}
+        {clickedRender ? <ContactForm allContacts={allContacts} handleAddContact={this.handleAddContact} renderContactForm={this.renderContactForm}/> : null}
+
         <ContactContainer allContacts={allContacts} handleUpdateContact={this.handleUpdateContact} handleDeleteContact={this.handleDeleteContact} />
       </div>
     )
