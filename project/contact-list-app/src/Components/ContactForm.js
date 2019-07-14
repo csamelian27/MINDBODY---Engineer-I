@@ -24,11 +24,13 @@ class ContactForm extends React.Component {
       phone: "",
       email: "",
       index: this.props.allContacts.length + 1
+      email: ""
     })
   }
 
   render() {
     console.log(this.state);
+    console.log(this.props);
     return (
       <form className="contact-form" onSubmit={this.handleSubmit}>
         <input type="text" name="name" value={this.state.name} onChange={this.handleChange}></input>
