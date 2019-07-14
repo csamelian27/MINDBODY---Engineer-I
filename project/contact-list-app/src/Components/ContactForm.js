@@ -7,6 +7,7 @@ class ContactForm extends React.Component {
     phone: "",
     email: "",
     index: 0
+    index: this.props.count
   }
 
   handleChange = (e) => {
