@@ -5,15 +5,13 @@ import ContactContainer from './ContactContainer'
 class Home extends React.Component {
 
   state = {
-    allContacts: [],
-    count: 0
+    allContacts: []
   }
 
   handleAddContact = (contact) => {
-    let { allContacts, count } = this.state;
+    let { allContacts } = this.state;
     this.setState({
-      allContacts: [...allContacts, contact],
-      count: count+1
+      allContacts: [...allContacts, contact]
     })
   }
 
@@ -41,12 +39,12 @@ class Home extends React.Component {
   }
 
   render() {
-    let { allContacts, count } = this.state;
-    console.log(this.state);
+    let { allContacts } = this.state;
+    console.log(allContacts);
 
     return(
       <div className="home">
-        <ContactForm allContacts={allContacts} count={count} handleAddContact={this.handleAddContact} />
+        <ContactForm allContacts={allContacts} handleAddContact={this.handleAddContact} />
         <ContactContainer allContacts={allContacts} handleUpdateContact={this.handleUpdateContact} handleDeleteContact={this.handleDeleteContact} />
       </div>
     )
