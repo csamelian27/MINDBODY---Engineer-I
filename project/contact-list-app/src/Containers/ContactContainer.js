@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactCard from '../Components/ContactCard'
+import SearchBar from '../Components/SearchBar'
 
 const ContactContainer = (props) => {
 
@@ -10,7 +11,7 @@ const ContactContainer = (props) => {
   console.log(props);
   return (
     <div className="contact-container">
-      Contacts Container
+      <div className="contact-container-header">Your Contacts:</div>
       {renderCards()}
     </div>
   )

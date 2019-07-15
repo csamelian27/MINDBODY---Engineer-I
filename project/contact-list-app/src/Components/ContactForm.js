@@ -36,6 +36,7 @@ class ContactForm extends React.Component {
     console.log(this.state);
     return (
       <form className="contact-form" onSubmit={this.handleSubmit}>
+        <h2 className="contact-form-header">Create a New Contact!</h2><br></br>
         <input type="text" name="name" placeholder="Name" value={this.state.name} onChange={this.handleChange}></input>
         <input type="text" name="phone" placeholder="Phone Number" value={this.state.phone} onChange={this.handleChange}></input>
         <input type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.handleChange}></input>

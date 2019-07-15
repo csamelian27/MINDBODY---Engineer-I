@@ -1,6 +1,6 @@
 body, * {
   margin: 0;
-  padding: 0;
+  padding: 1px;
   box-sizing: border-box;
 }
 
@@ -16,20 +16,28 @@ body, * {
   display: flex;
   flex-direction: column;
   background-color: #347B80;
-  min-height: 500px;
+  min-height: 400px;
   margin: 5% auto;
-  width: 50%;
+  width: 25%;
   align-items: center;
   justify-content: center;
   box-shadow: 5px 10px #444;
+  border-radius: 2px;
+}
+
+.contact-form-header {
+  margin-bottom: 5px;
+  color: white;
 }
 
 .contact-form input {
   margin: 10px;
-  padding: 10px 0;
+  padding: 10px 5px;
   width: 60%;
   border: 1px solid grey;
+  border-radius: 2px;
   box-shadow: 0px 8px 6px -4px black;
+  text-align: center;
 }
 
 .contact-form button {
@@ -43,6 +51,13 @@ body, * {
 
 .add-contact-button {
   width: 75px;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+
+.home > button:hover {
+  background-color: rgba(155, 111, 155, 1);
+  color: white;
 }
 
 /* ------------------- CONTACT CONTAINER AND CARDS -------------------*/
@@ -50,6 +65,12 @@ body, * {
 .contact-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+.contact-container-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact-card {
@@ -102,8 +123,15 @@ body, * {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 10% 15%;
+  padding: 10% 8%;
   background: #347B80;
+  border-radius: 2px;
+}
+
+.update-form-header {
+  font-size: 2em;
+  margin-bottom: 5px;
+  color: white;
 }
 
 .update-form input {
@@ -111,11 +139,12 @@ body, * {
   padding: 3px;
   border: 1px solid grey;
   box-shadow: 0px 8px 6px -4px black;
+  text-align: center;
 }
 
 .update-form button {
   background-color: rgba(255, 255, 255, 0.5);
-  font-size: .6em;
+  font-size: .8em;
   margin-top: 30px;
   padding: 5px 10px;
 
