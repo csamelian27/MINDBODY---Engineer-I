@@ -52,4 +52,4 @@ JQuery is a lightweight JavaScript library used to make it easier to accomplish 
 	It is an example of a classic SQL injection vulnerability.
 	The code accepts user input (in this case, from a POST parameter) and includes it directly in the SQL statement.
 	This allows an attacker to inject SQL into the query, therefore tricking the application into sending a malformed query to the database.
-	Use a parameterized query instead.
+	To fix, sanitize user inputs before injecting into the db.
