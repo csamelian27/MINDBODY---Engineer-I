@@ -46,4 +46,5 @@ JQuery is a lightweight JavaScript library used to make it easier to accomplish 
 	$query = 'insert into friends (name) values ("' . $name . '")';
 	mysqli_query($connection, $query);
 
-	No $connection was defined.
+	The value being inserted only needs to be '$name' in single quotes with the $, without all of the extra characters.
+	Typical syntax also capitalizes INSERT INTO and VALUES.
