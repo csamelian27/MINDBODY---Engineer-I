@@ -24,16 +24,15 @@ class ContactContainer extends React.Component {
   }
 
   renderFilteredCards = (e) => {
-    this.setState({
-      searchInput: e.target.value
-    })
     let searchInput = e.target.value;
-    let newArray = this.props.allContacts.filter(obj => {
+    let { allContacts } = this.props;
+    let newArray = allContacts.filter(obj => {
       if(obj.name.toString().includes(searchInput) || obj.phone.toString().includes(searchInput) || obj.email.toString().includes(searchInput)) {
         return obj;
       }
     })
     this.setState({
+      searchInput: e.target.value,
       filterContacts: newArray
     })
   }
