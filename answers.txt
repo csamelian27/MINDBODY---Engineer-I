@@ -36,7 +36,7 @@ Server side filtering will always operate on up-to-date data, while client side 
 
 3. What is jQuery and why would you choose to use it, or choose not to use it?
 
-JQuery is a lightweight JavaScript library used to make it easier to accomplish a lot of common, yet verbose, tasks by wrapping them into methods that can be called with a single line of code. It was invented to simplify HTML/DOM manipulation, CSS manipulation, HTML event methods, effects and animations, and AJAX calls. While many large companies still use JQuery, it has become much less popular because we no longer have the same browser compatibility issues, and we have the Selectors API (selecting/updating/removing DOM elements, waiting for DOM content to be loaded, adding/removing classes from DOM elements) and Fetch (AJAX requests) standardized to the browser, replacing two of the best features of jQuery. Additionally, there are various JavaScript frameworks such as React.js that make DOM manipulation and event handling exceptionally simple, as well as CSS3 Animations and Transitions. I personally would choose to use a JavaScript framework such as React.js because it is able to incorporate all of jQuery's benefits in a modular form that makes it easy to style with CSS3 and it allows me to utilize the many benefits of the modern day browser. If you're working with legacy code and your project relies on it then I would recommend continuing to use it because it still functions well and supports older browsers.
+JQuery is a lightweight JavaScript library used to make it easier to accomplish a lot of common, yet verbose, tasks by wrapping them into methods called with a single line of code. It was invented to simplify HTML/DOM manipulation, CSS manipulation, HTML event methods, effects and animations, and AJAX calls. While many large companies still use JQuery, it has become much less popular because we no longer have the same browser compatibility issues, and we have the Selectors API (selecting/updating/removing DOM elements, waiting for DOM content to be loaded, adding/removing classes from DOM elements) and Fetch (AJAX requests) standardized to the browser, replacing two of the best features of jQuery. Additionally, there are various JavaScript frameworks such as React.js that make DOM manipulation and event handling exceptionally simple, as well as CSS3 Animations and Transitions. I personally would choose to use a JavaScript framework such as React.js because it is able to incorporate all of jQuery's benefits in a modular form that makes it easy to style with CSS3 and it allows me to utilize the many benefits of the modern day browser. If you're working with legacy code and your project relies on jQuery then I would recommend continuing to use it because it still functions well and supports older browsers.
 
 
 
@@ -46,5 +46,10 @@ JQuery is a lightweight JavaScript library used to make it easier to accomplish 
 	$query = 'insert into friends (name) values ("' . $name . '")';
 	mysqli_query($connection, $query);
 
-	The value being inserted only needs to be '$name' in single quotes with the $, without all of the extra characters.
+	The value being inserted only needs to be '$name' without all of the extra characters.
 	Typical syntax also capitalizes INSERT INTO and VALUES.
+
+	It is an example of a classic SQL injection vulnerability.
+	The code accepts user input (in this case, from a POST parameter) and includes it directly in the SQL statement.
+	This allows an attacker to inject SQL into the query, therefore tricking the application into sending a malformed query to the database.
+	Use a parameterized query instead.
