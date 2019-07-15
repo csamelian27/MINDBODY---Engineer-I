@@ -9,13 +9,7 @@ const ContactContainer = (props) => {
   }
 
   const renderSearchCards = (searchInput) => {
-    let newArray = props.allContacts.filter(contact => {
-      console.log(Object.values(contact));
-      if(Object.values(contact).includes(searchInput)) {
-        return contact
-      }
-    })
-    console.log(newArray);
+    
   }
 
   console.log(props);
