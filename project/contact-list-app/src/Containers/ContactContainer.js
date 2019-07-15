@@ -24,10 +24,10 @@ class ContactContainer extends React.Component {
   }
 
   renderFilteredCards = (e) => {
-    let searchInput = e.target.value;
+    let searchInput = e.target.value.toLowerCase();
     let { allContacts } = this.props;
     let newArray = allContacts.filter(obj => {
-      if(obj.name.toString().includes(searchInput) || obj.phone.toString().includes(searchInput) || obj.email.toString().includes(searchInput)) {
+      if(obj.name.toString().toLowerCase().includes(searchInput) || obj.phone.toString().toLowerCase().includes(searchInput) || obj.email.toString().toLowerCase().includes(searchInput)) {
         return obj;
       }
     })

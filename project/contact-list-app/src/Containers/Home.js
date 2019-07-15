@@ -54,7 +54,7 @@ class Home extends React.Component {
 
   render() {
     let { allContacts, clickedRender } = this.state;
-    console.log(allContacts, clickedRender);
+    console.log(allContacts);
 
     return(
       <div className="home">
