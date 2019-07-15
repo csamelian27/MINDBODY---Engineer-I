@@ -17,7 +17,7 @@ class ContactForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    let { name, phone, email } = this.state;
+    let { name } = this.state;
     if(name !== "") {
       this.props.handleAddContact(this.state)
       this.props.renderContactForm();

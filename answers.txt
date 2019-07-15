@@ -45,3 +45,5 @@ JQuery is a lightweight JavaScript library used to make it easier to accomplish 
 	$name = $_POST['name'];
 	$query = 'insert into friends (name) values ("' . $name . '")';
 	mysqli_query($connection, $query);
+
+	No $connection was defined.
