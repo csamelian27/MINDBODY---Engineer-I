@@ -24,6 +24,10 @@ class Home extends React.Component {
 
   handleUpdateContact = (contact) => {
     let { allContacts } = this.state;
+    if(contact.name === "") contact.name = "Name Removed"
+    else if(contact.phone === "") contact.phone = "~ No Phone # ~"
+    else if(contact.email === "") contact.email = "~ No Email ~"
+
     let newArray = allContacts.map(contactObj => {
       if(contactObj.index === contact.index) {
         return contactObj = contact
