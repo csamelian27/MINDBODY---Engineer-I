@@ -38,8 +38,7 @@ class ContactContainer extends React.Component {
   }
 
   render() {
-    console.log(this.state);
-    let { searchInput, filterContacts } = this.state;
+    let { searchInput } = this.state;
     return (
       <div>
         <div className="search-bar">
