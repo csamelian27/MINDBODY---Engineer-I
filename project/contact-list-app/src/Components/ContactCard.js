@@ -11,7 +11,7 @@ const ContactCard = (props) => {
 
   return(
     <div className="contact-card">
-      <span>{props.contact.name}</span>
+      <span className="contact-name">{props.contact.name}</span>
       <span>{props.contact.phone}</span>
       <span>{props.contact.email}</span>
       <button onClick={handleClickUpdate}>Edit</button>

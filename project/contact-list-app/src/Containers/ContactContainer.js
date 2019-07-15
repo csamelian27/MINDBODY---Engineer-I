@@ -42,9 +42,10 @@ class ContactContainer extends React.Component {
     let { searchInput, filterContacts } = this.state;
     return (
       <div>
-        <label> Search Your Contacts:
-          <input type="text" placeholder=" Search Your Contacts" value={searchInput} onChange={this.renderFilteredCards}></input>
-        </label>
+        <div className="search-bar">
+          <label> Search Your Contacts:</label>
+          <input type="text" placeholder="name, phone, email" value={searchInput} onChange={this.renderFilteredCards}></input>
+        </div>
         <div className="contact-container">
           {this.renderCards()}
         </div>

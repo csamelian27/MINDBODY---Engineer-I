@@ -11,23 +11,25 @@ body, * {
   flex-direction: column;
 }
 
+
 /* ----------------- ADD CONTACT FORM AND BUTTONS -----------------*/
 .contact-form {
   display: flex;
   flex-direction: column;
   background-color: #347B80;
   min-height: 400px;
-  margin: 5% auto;
+  margin: 5% auto 4% auto;
   width: 25%;
   align-items: center;
   justify-content: center;
-  box-shadow: 5px 10px #444;
+  box-shadow: 5px 7px rgba(0.1, 0.1, 0.1, 0.2);
   border-radius: 2px;
 }
 
 .contact-form-header {
   margin-bottom: 5px;
   color: white;
+  font-size: 1.8em;
 }
 
 .contact-form input {
@@ -38,6 +40,7 @@ body, * {
   border-radius: 2px;
   box-shadow: 0px 8px 6px -4px black;
   text-align: center;
+  font-size: 0.8em;
 }
 
 .contact-form button {
@@ -45,14 +48,21 @@ body, * {
   font-size: .6em;
   width: 60%;
   padding: 5px 10px;
-  font-size: .6em;
+  font-size: 1em;
   margin-top: 20px;
 }
 
+.contact-form button:hover {
+  background-color: rgba(0.1, 0.1, 0.1, 0.1);
+  color: white;
+}
+
 .add-contact-button {
-  width: 75px;
+  width: 100px;
   padding: 5px 10px;
   border-radius: 2px;
+  font-size: 1em;
+  margin: 20px;
 }
 
 .home > button:hover {
@@ -60,17 +70,11 @@ body, * {
   color: white;
 }
 
-/* ------------------- CONTACT CONTAINER AND CARDS -------------------*/
 
+/* ------------------- CONTACT CONTAINER AND CARDS -------------------*/
 .contact-container {
   display: flex;
   flex-wrap: wrap;
-}
-
-.contact-container-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .contact-card {
@@ -88,8 +92,13 @@ body, * {
   font-weight: bold;
 }
 
+.contact-card .contact-name {
+  font-size: 2.3em;
+}
+
 .contact-card > span {
   margin: 10px 0;
+  font-size: 1.3em;
 }
 
 .contact-card > button {
@@ -98,10 +107,33 @@ body, * {
   margin: 20px auto 0 auto;
   transition: .5s ease;
   padding: 5px;
+  font-size: 1em;
 }
 
 .contact-card > button:hover {
-  background-color: rgba(255, 0, 0, 0.5)
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+/*---------------------- SEARCH BAR ----------------------*/
+.search-bar {
+  margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-bar label {
+  font-size: 2em;
+}
+
+.search-bar input {
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid grey;
+  box-shadow: 0px 4px 10px -4px black;
+  text-align: center;
+  font-size: 0.8em;
 }
 
 
