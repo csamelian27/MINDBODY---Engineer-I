@@ -9,13 +9,18 @@ class ContactContainer extends React.Component {
   }
 
   renderCards = () => {
-    let { allContacts, handleUpdateContact, handleDeleteContact } = this.props;
+    let { allContacts } = this.props;
     let { searchInput, filterContacts } = this.state;
     if(!searchInput) {
-      return allContacts.map((contactObj, index) => <ContactCard key={index} contact={contactObj} handleUpdateContact={handleUpdateContact} handleDeleteContact={handleDeleteContact} />)
+      return this.mapHelperFunction(allContacts)
     } else {
-      return filterContacts.map((contactObj, index) => <ContactCard key={index} contact={contactObj} handleUpdateContact={handleUpdateContact} handleDeleteContact={handleDeleteContact} />)
+      return this.mapHelperFunction(filterContacts)
     }
+  }
+
+  mapHelperFunction = (arr) => {
+    let { handleUpdateContact, handleDeleteContact } = this.props;
+    return arr.map((contactObj, index) => <ContactCard key={index} contact={contactObj} handleUpdateContact={handleUpdateContact} handleDeleteContact={handleDeleteContact} />)
   }
 
   renderFilteredCards = (e) => {
