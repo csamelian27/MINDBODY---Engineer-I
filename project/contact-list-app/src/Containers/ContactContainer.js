@@ -4,12 +4,18 @@ import ContactCard from '../Components/ContactCard'
 class ContactContainer extends React.Component {
 
   state = {
-    searchInput: ""
+    searchInput: "",
+    filterContacts: []
   }
 
   renderCards = () => {
     let { allContacts, handleUpdateContact, handleDeleteContact } = this.props;
-    return allContacts.map((contactObj, index) => <ContactCard key={index} contact={contactObj} handleUpdateContact={handleUpdateContact} handleDeleteContact={handleDeleteContact} />)
+    let { searchInput, filterContacts } = this.state;
+    if(!searchInput) {
+      return allContacts.map((contactObj, index) => <ContactCard key={index} contact={contactObj} handleUpdateContact={handleUpdateContact} handleDeleteContact={handleDeleteContact} />)
+    } else {
+      return filterContacts.map((contactObj, index) => <ContactCard key={index} contact={contactObj} handleUpdateContact={handleUpdateContact} handleDeleteContact={handleDeleteContact} />)
+    }
   }
 
   renderFilteredCards = (e) => {
@@ -22,16 +28,22 @@ class ContactContainer extends React.Component {
         return obj;
       }
     })
-    console.log(newArray);
+    this.setState({
+      filterContacts: newArray
+    })
   }
 
   render() {
-    let { searchInput } = this.state;
+    console.log(this.state);
+    let { searchInput, filterContacts } = this.state;
     return (
-      <div className="contact-container">
-        <div className="contact-container-header">Your Contacts:</div>
-        <input type="text" placeholder=" Search Your Contacts" value={searchInput} onChange={this.renderFilteredCards}></input>
-        {this.renderCards()}
+      <div>
+        <label> Search Your Contacts:
+          <input type="text" placeholder=" Search Your Contacts" value={searchInput} onChange={this.renderFilteredCards}></input>
+        </label>
+        <div className="contact-container">
+          {this.renderCards()}
+        </div>
       </div>
     )
   }
