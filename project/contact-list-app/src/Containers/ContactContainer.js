@@ -11,9 +11,11 @@ class ContactContainer extends React.Component {
   renderCards = () => {
     let { allContacts } = this.props;
     let { searchInput, filterContacts } = this.state;
+    if(!allContacts.length) return "**You currently have no contacts**"
     if(!searchInput) {
       return this.mapHelperFunction(allContacts)
     } else {
+      if(!filterContacts.length) return "No Matching Contacts"
       return this.mapHelperFunction(filterContacts)
     }
   }
