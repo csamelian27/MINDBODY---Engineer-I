@@ -7,3 +7,12 @@
 	$name = $_POST['name'];
 	$query = 'insert into friends (name) values ("' . $name . '")';
 	mysqli_query($connection, $query);
+
+
+## Answers
+
+1. Write a function to remove duplicate values from an array.  (Assume all values of the array are simple, lowercase strings)
+
+removeLowerCase = () => {
+
+}
